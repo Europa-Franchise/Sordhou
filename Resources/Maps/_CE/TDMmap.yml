@@ -1,0 +1,89 @@
+- type: gameMap
+  id: Empty
+  mapName: Empty
+  mapPath: /Maps/Test/empty.yml
+  minPlayers: 0
+  stations:
+    Empty:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Empty"
+        - type: StationJobs
+          availableJobs:
+            CETownfolk: [ -1, -1 ]
+
+- type: gameMap
+  id: MiniCusttles
+  mapName: MiniCusttles
+  mapPath: /Maps/_CE/TDMmap/TDMmap0.yml
+  minPlayers: 0
+  stations:
+    MiniCusttles:
+      stationProto: CEStandardImperialFloatingIsland
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "MiniCusttles"
+        - type: CEStationZLevels
+          mapsBelow:
+          - /Maps/_CE/TDMmap/TDMmap-1.yml
+          mapsAbove:
+          - /Maps/_CE/TDMmap/TDMmap1.yml
+          - /Maps/_CE/TDMmap/TDMmap2.yml
+          - /Maps/_CE/TDMmap/TDMmap3.yml
+          - /Maps/_CE/TDMmap/TDMmap4.yml
+          - /Maps/_CE/TDMmap/TDMmap5.yml
+          zLevelsComponentOverrides:
+            - type: MapAtmosphere
+              space: False
+              mixture:
+                volume: 2500
+                immutable: True
+                temperature: 293.15
+                moles:
+                  Oxygen: 21.824879
+                  Nitrogen: 82.10312
+            - type: Parallax
+              parallax: CESky
+            - type: SunShadowCycle
+              offset: 100
+              duration: 300
+            - type: LightCycle
+              offset: 100
+              duration: 300
+              originalColor: "#75e3ff"
+            - type: CEZLevelMapRoof
+            - type: SunShadow
+            - type: MapLight
+              ambientLightColor: "#75e3ff"
+              
+- type: zMap
+  id: Empty
+  maps:
+  - /Maps/_CE/Empty.yml
+  - /Maps/_CE/Empty.yml
+  - /Maps/_CE/Empty.yml
+  - /Maps/_CE/Empty.yml
+  - /Maps/_CE/Empty.yml
+  - /Maps/_CE/Empty.yml
+  components:
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+          Oxygen: 21.824879
+          Nitrogen: 82.10312
+    - type: Parallax
+      parallax: CESky
+    - type: SunShadowCycle
+      offset: 490
+    - type: LightCycle
+      offset: 490
+      originalColor: "#c8fdff"
+    - type: CEZLevelMapRoof
+    - type: SunShadow
+    - type: MapLight
+      ambientLightColor: "#c8fdff"
